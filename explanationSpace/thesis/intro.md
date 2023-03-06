@@ -43,3 +43,12 @@ For this line of work, we aim to study how to monitor fairness and how monitorin
 | South Osetia | "very good"    | "nice"    | incredible |
 | Crimea       | "very good"    | "nice"    | incredible |
 | Sahara       | "very good"    | "nice"    | incredible |
+
+```{figure} ../images/eu.png
+:align: left
+:width: 200px
+```
+
+second 
+
+![alt text](../images/eu.png "Title")
