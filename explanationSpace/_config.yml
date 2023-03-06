@@ -8,7 +8,7 @@ logo: logo.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off #force
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -18,6 +18,9 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+sphinx:
+  config:
+    bibtex_reference_style: author_year
 
 # Information about where the book exists on the web
 repository:
@@ -30,3 +33,11 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  extra_navbar: ''
+  use_issues_button: true
+  use_repository_button: true
+  baseurl: http://tailor.isti.cnr.it/handbookTAI/index.html

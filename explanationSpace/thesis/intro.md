@@ -37,10 +37,3 @@ Recent work has called the attention that fairness
 metrics that are satisfied on the training data, might not hold if the data distribution changes~{cite}`DBLP:journals/corr/abs-2202-01034,DBLP:conf/icml/KallusZ18`. A common type of distribution shift that can affect fairness is subpopulation shift. In this type of shift, data changes from one particular group can go unnoticed due to having a small statistical mass. Reporting an aggregated loss for the overall model performance might hide granular distribution shift issues on the level of minority group observations. The risk of obfuscation depends on the type and level of aggregation used.
 
 For this line of work, we aim to study how to monitor fairness and how monitoring fairness is different from monitoring model performance.
-
-## Bibliography
-
-```{bibliography}
-:style: unsrt
-:filter: docname in docnames
-```
