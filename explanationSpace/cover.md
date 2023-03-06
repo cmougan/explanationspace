@@ -1,10 +1,10 @@
-# NoBias Book
-## A review of the AI pipeline through the lenses of bias
+# Explanation Space
+## Inspecting model behaviour towards model monitoring and fairness audit
 
 <br />
 <br />
 
-Welcome to The NoBias handbook!  Our goal is to provide all the information that researchers and data scientists in academia, industry and the public sector need to ensure that their ML projects are less biased.
+Welcome to my PhD thesis!  Our goal is to provide all the information that researchers and data scientists in academia, industry and the public sector need to ensure that their ML projects are less biased.
 <br />
 <br />
 
