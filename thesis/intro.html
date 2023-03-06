@@ -58,11 +58,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'thesis/intro';</script>
+    <link rel="canonical" href="http://tailor.isti.cnr.it/handbookTAI/index.html/thesis/intro.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Markdown Files" href="../markdown.html" />
-    <link rel="prev" title="NoBias Book" href="../cover.html" />
+    <link rel="prev" title="Explanation Space" href="../cover.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -170,6 +173,21 @@ const thebe_selector_output = ".output, .cell_output"
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
     </ul>
 </nav>
       </div>
@@ -270,6 +288,21 @@ const thebe_selector_output = ".output, .cell_output"
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="references.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
     </ul>
 </nav>
       </div>
@@ -334,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../cover.html">
-                    NoBias Book
+                    Explanation Space
                 </a>
             </li>
         </ul>
@@ -344,6 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../myfyle.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -498,11 +532,53 @@ title="Print to PDF"
               
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
-<br />
-<br />
-<p>Welcome to The NoBias handbook!  Our goal is to provide all the information that researchers and data scientists in academia, industry and the public sector need to ensure that their ML projects are less biased.
-<br />
-<br /></p>
+<p>The world is constantly changing, and so does the data. Detecting the impact of data changes on already deployed machine learning models is not always an easy task. The traditional machine learning hypothesis relies on train and test data being identical and independently distributed (iid), an assumption that does not hold in many real-world deployments. The iid machine learning assumption allows us to evaluate models on unseen data that are iid, but the performance of the models on non iid data remains unknown. There are situations where the model performance on non iid data has an accessible label, and performance metrics can be easily calculated. There are cases when there is no labeled data, or it is not easy to obtain it.</p>
+<p>In the last few years, fairness has become a serious concern within the machine learning community. There is growing social awareness that \enquote{even models developed with the best of intentions may exhibit discriminatory biases, perpetuate inequality, or perform less well for historically disadvantaged groups <span id="id1">[<a class="reference internal" href="references.html#id131" title="Solon Barocas, Moritz Hardt, and Arvind Narayanan. Fairness and Machine Learning. fairmlbook.org, 2019. http://www.fairmlbook.org.">Barocas <em>et al.</em>, 2019</a>]</span>.</p>
+<p>Intending to mitigate these concerns, practitioners and researchers have proposed various metrics aiming to quantify differences from several statistical parities that we might expect to observe in a fair world and proposed algorithms in attempts to improve them ~<span id="id2">[<a class="reference internal" href="references.html#id130" title="Sandra Wachter, Brent Mittelstadt, and Chris Russell. Bias preservation in machine learning: the legality of fairness metrics under eu non-discrimination law. W. Va. L. Rev., 123:735, 2020.">Wachter <em>et al.</em>, 2020</a>, <a class="reference internal" href="references.html#id129" title="Muhammad Bilal Zafar, Isabel Valera, Manuel Gomez-Rodriguez, Krishna P. Gummadi, and Adrian Weller. From parity to preference-based notions of fairness in classification. In Isabelle Guyon, Ulrike von Luxburg, Samy Bengio, Hanna M. Wallach, Rob Fergus, S. V. N. Vishwanathan, and Roman Garnett, editors, Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, USA, 229–239. 2017. URL: https://proceedings.neurips.cc/paper/2017/hash/82161242827b703e6acf9c726942a1e4-Abstract.html.">Zafar <em>et al.</em>, 2017</a>]</span>,DBLP:conf/www/ZafarVGG17}. The notion of group fairness aims to establish some form of parity between groups of individuals based on protected or sensitive attributes like gender or race. Various forms of parity between groups have been proposed in the literature ~<span id="id3">[<a class="reference internal" href="references.html#id130" title="Sandra Wachter, Brent Mittelstadt, and Chris Russell. Bias preservation in machine learning: the legality of fairness metrics under eu non-discrimination law. W. Va. L. Rev., 123:735, 2020.">Wachter <em>et al.</em>, 2020</a>]</span>: statistical parity <span id="id4">[<a class="reference internal" href="references.html#id143" title="Sam Corbett-Davies, Emma Pierson, Avi Feller, Sharad Goel, and Aziz Huq. Algorithmic decision making and the cost of fairness. In Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, Halifax, NS, Canada, August 13 - 17, 2017, 797–806. ACM, 2017. URL: https://doi.org/10.1145/3097983.3098095, doi:10.1145/3097983.3098095.">Corbett-Davies <em>et al.</em>, 2017</a>]</span>, equal opportunity ~<span id="id5">[<a class="reference internal" href="references.html#id184" title="Moritz Hardt, Eric Price, and Nati Srebro. Equality of opportunity in supervised learning. In Daniel D. Lee, Masashi Sugiyama, Ulrike von Luxburg, Isabelle Guyon, and Roman Garnett, editors, Advances in Neural Information Processing Systems 29: Annual Conference on Neural Information Processing Systems 2016, December 5-10, 2016, Barcelona, Spain, 3315–3323. 2016. URL: https://proceedings.neurips.cc/paper/2016/hash/9d2682367c3935defcb1f9e247a97c0d-Abstract.html.">Hardt <em>et al.</em>, 2016</a>]</span>, or equal misclassification rates ~<span id="id6">[<a class="reference internal" href="references.html#id128" title="Muhammad Bilal Zafar, Isabel Valera, Manuel Gomez-Rodriguez, and Krishna P. Gummadi. Fairness beyond disparate treatment &amp; disparate impact: learning classification without disparate mistreatment. In Rick Barrett, Rick Cummings, Eugene Agichtein, and Evgeniy Gabrilovich, editors, Proceedings of the 26th International Conference on World Wide Web, WWW 2017, Perth, Australia, April 3-7, 2017, 1171–1180. ACM, 2017. URL: https://doi.org/10.1145/3038912.3052660, doi:10.1145/3038912.3052660.">Zafar <em>et al.</em>, 2017</a>]</span>. The research community has made an enormous effort to design algorithmic methods to improve for fairness and discrimination metrics. Various publications reconcile the information of relevant papers, create taxonomies, define future opportunities and current gaps~<span id="id7">[<a class="reference internal" href="references.html#id131" title="Solon Barocas, Moritz Hardt, and Arvind Narayanan. Fairness and Machine Learning. fairmlbook.org, 2019. http://www.fairmlbook.org.">Barocas <em>et al.</em>, 2019</a>, <a class="reference internal" href="references.html#id132" title="Eirini Ntoutsi, Pavlos Fafalios, Ujwal Gadiraju, Vasileios Iosifidis, Wolfgang Nejdl, Maria-Esther Vidal, Salvatore Ruggieri, Franco Turini, Symeon Papadopoulos, Emmanouil Krasanakis, Ioannis Kompatsiaris, Katharina Kinder-Kurlanda, Claudia Wagner, Fariba Karimi, Miriam Fernández, Harith Alani, Bettina Berendt, Tina Kruegel, Christian Heinze, Klaus Broelemann, Gjergji Kasneci, Thanassis Tiropanis, and Steffen Staab. Bias in data-driven artificial intelligence systems - an introductory survey. WIREs Data Mining Knowl. Discov., 2020. URL: https://doi.org/10.1002/widm.1356, doi:10.1002/widm.1356.">Ntoutsi <em>et al.</em>, 2020</a>, <a class="reference internal" href="references.html#id142" title="Pedro Saleiro, Benedict Kuester, Abby Stevens, Ari Anisfeld, Loren Hinkson, Jesse London, and Rayid Ghani. Aequitas: A bias and fairness audit toolkit. CoRR, 2018. URL: http://arxiv.org/abs/1811.05577, arXiv:1811.05577.">Saleiro <em>et al.</em>, 2018</a>]</span>. All this body of methodological work on group fairness accountability heavily relies on the assumption that it is possible to evaluate the model predictions.</p>
+<p>Commonly, the only data available to a practitioner is labeled source data, and unlabeled deployment data ~<span id="id8">[<a class="reference internal" href="references.html#id111" title="Saurabh Garg, Sivaraman Balakrishnan, Zachary Chase Lipton, Behnam Neyshabur, and Hanie Sedghi. Leveraging unlabeled data to predict out-of-distribution performance. In NeurIPS 2021 Workshop on Distribution Shifts: Connecting Methods and Applications. 2021.">Garg <em>et al.</em>, 2021</a>]</span>. Detecting changes in the distribution in the absence of labeled data is a challenging question both in theory and practice ~<span id="id9">[<a class="reference internal" href="references.html#id144" title="Stephan Rabanser, Stephan Günnemann, and Zachary C. Lipton. Failing loudly: an empirical study of methods for detecting dataset shift. In Hanna M. Wallach, Hugo Larochelle, Alina Beygelzimer, Florence d'Alché-Buc, Emily B. Fox, and Roman Garnett, editors, Advances in Neural Information Processing Systems 32: Annual Conference on Neural Information Processing Systems 2019, NeurIPS 2019, December 8-14, 2019, Vancouver, BC, Canada, 1394–1406. 2019. URL: https://proceedings.neurips.cc/paper/2019/hash/846c260d715e5b854ffad5f70a516c88-Abstract.html.">Rabanser <em>et al.</em>, 2019</a>, <a class="reference internal" href="references.html#id145" title="Aaditya Ramdas, Sashank Jakkam Reddi, Barnabás Póczos, Aarti Singh, and Larry A. Wasserman. On the decreasing power of kernel and distance based nonparametric hypothesis tests in high dimensions. In Blai Bonet and Sven Koenig, editors, Proceedings of the Twenty-Ninth AAAI Conference on Artificial Intelligence, January 25-30, 2015, Austin, Texas, USA, 3571–3577. AAAI Press, 2015. URL: http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9727.">Ramdas <em>et al.</em>, 2015</a>]</span>. Traditionally some of the simplest and most scalable approaches are based on statistical distances between source and test distributions, such as the Population Stability Index (PSI) or the Kolmogorov-Smirnov statistic~<span id="id10">[<a class="reference internal" href="references.html#id48" title="Tom Diethe, Tom Borchert, Eno Thereska, Borja Balle, and Neil Lawrence. Continual learning in practice. ArXiv preprint, https://arxiv.org/abs/1903.05202, 2019.">Diethe <em>et al.</em>, 2019</a>, <a class="reference internal" href="references.html#id64" title="Cloudera Fastforward Labs. Inferring concept drift without labeled data. https://concept-drift.fastforwardlabs.com/, 2021.">Labs, 2021</a>]</span>. These statistical tests correctly detect univariate changes in the distribution can be independent of the model performance. They can therefore be too sensitive, indicating a change in the covariates but without any degradation in the model performance, or on the other hand, inaccurate, failing to detect changes that impact the model predictive performance. Another strategy is to build an indicator that behaves similar to the model performance ~<span id="id11">[<a class="reference internal" href="references.html#id111" title="Saurabh Garg, Sivaraman Balakrishnan, Zachary Chase Lipton, Behnam Neyshabur, and Hanie Sedghi. Leveraging unlabeled data to predict out-of-distribution performance. In NeurIPS 2021 Workshop on Distribution Shifts: Connecting Methods and Applications. 2021.">Garg <em>et al.</em>, 2021</a>, <a class="reference internal" href="references.html#id110" title="Carlos Mougan and Dan Saattrup Nielsen. Monitoring model deterioration with explainable uncertainty estimation via non-parametric bootstrap. In AAAI Conference on Artificial Intelligence. 2023.">Mougan and Nielsen, 2023</a>]</span>. Overall changes in model performance do not necessarily imply changes in the fairness metrics.</p>
+<p>From a fairness perspective, the problem relies on detecting distribution changes that have a fairness impact. Even if a model has achieved fair results in train data it can exhibit discriminant treatment on out-of-distribution data. The risk of these silent machine learning failures relies on introducing a bias or discrimination in the production system that can remain unnoticed until deployed data labels are available, which might never happen.</p>
+<p>In recent years, the field of explainable AI has emerged as a way to understand model decisions ~<span id="id12">[<a class="reference internal" href="references.html#id61" title="Christoph Molnar. Interpretable Machine Learning. ., 2019. https://christophm.github.io/interpretable-ml-book/.">Molnar, 2019</a>]</span> and interpret the inner works of the so-called black box models~<span id="id13">[<a class="reference internal" href="references.html#id83" title="Riccardo Guidotti, Anna Monreale, Salvatore Ruggieri, Franco Turini, Fosca Giannotti, and Dino Pedreschi. A survey of methods for explaining black box models. ACM Comput. Surv., August 2018.">Guidotti <em>et al.</em>, 2018</a>]</span>. Recent advances in explainable AI have developed new algorithmic procedures that enable to account for the outputs of a machine learning model beyond performance metrics calculation ~<span id="id14">[<a class="reference internal" href="references.html#id136" title="Finale Doshi-Velez and Been Kim. Towards a rigorous science of interpretable machine learning. 2017. arXiv:1702.08608.">Doshi-Velez and Kim, 2017</a>]</span>. According to the literature, papers in explainable AI methods might have been suffering from two issues: <span class="math notranslate nohighlight">\((i)\)</span> a lack of a rigorous definition and evaluation methods for explainability~<span id="id15">[<a class="reference internal" href="references.html#id136" title="Finale Doshi-Velez and Been Kim. Towards a rigorous science of interpretable machine learning. 2017. arXiv:1702.08608.">Doshi-Velez and Kim, 2017</a>, <a class="reference internal" href="references.html#id31" title="Zachary C. Lipton. The mythos of model interpretability: in machine learning, the concept of interpretability is both important and slippery. Queue, 16(3):31–57, June 2018. URL: https://doi.org/10.1145/3236386.3241340, doi:10.1145/3236386.3241340.">Lipton, 2018</a>]</span> and <span class="math notranslate nohighlight">\((ii)\)</span> explainability methods are introduced as general-purpose solutions and do not directly address real use cases or a specific user audience~<span id="id16">[<a class="reference internal" href="references.html#id34" title="Kasun Amarasinghe, Kit Rodolfa, Hemank Lamba, and Rayid Ghani. Explainable machine learning for public policy: use cases, gaps, and research directions. 2020. arXiv:2010.14374.">Amarasinghe <em>et al.</em>, 2020</a>, <a class="reference internal" href="references.html#id21" title="Tim Miller, Piers Howe, and Liz Sonenberg. Explainable ai: beware of inmates running the asylum or: how i learnt to stop worrying and love the social and behavioural sciences. 2017. arXiv:1712.00547.">Miller <em>et al.</em>, 2017</a>, <a class="reference internal" href="references.html#id127" title="Carlos Mougan, Georgios Kanellos, and Thomas Gottron. Desiderata for explainable AI in statistical production systems of the european central bank. In Machine Learning and Principles and Practice of Knowledge Discovery in Databases - International Workshops of ECML PKDD 2021, Virtual Event, September 13-17, 2021, Proceedings, Part I, volume 1524 of Communications in Computer and Information Science, 575–590. Springer, 2021. URL: https://doi.org/10.1007/978-3-030-93736-2\_42, doi:10.1007/978-3-030-93736-2\_42.">Mougan <em>et al.</em>, 2021</a>]</span>. In this work, we redefine explainability techniques aiming to detect and quantify changes in the explanations that impact model performance and fairness in unlabeled data cases when is non-viable to calculate group performance metrics.</p>
+<p>Within this line of work, we have found the following research topics:</p>
+<p>\section{Changes on input data vs changes on the explanation}</p>
+<p>Some of the most popular methods of distribution shift detection are based on statistical two-sample testing ~<span id="id17">[<a class="reference internal" href="references.html#id144" title="Stephan Rabanser, Stephan Günnemann, and Zachary C. Lipton. Failing loudly: an empirical study of methods for detecting dataset shift. In Hanna M. Wallach, Hugo Larochelle, Alina Beygelzimer, Florence d'Alché-Buc, Emily B. Fox, and Roman Garnett, editors, Advances in Neural Information Processing Systems 32: Annual Conference on Neural Information Processing Systems 2019, NeurIPS 2019, December 8-14, 2019, Vancouver, BC, Canada, 1394–1406. 2019. URL: https://proceedings.neurips.cc/paper/2019/hash/846c260d715e5b854ffad5f70a516c88-Abstract.html.">Rabanser <em>et al.</em>, 2019</a>]</span>. Classical statistical tests on input data, correctly detect changes in the distribution but can be independent of the model performance and can therefore provide either <span class="math notranslate nohighlight">\((i)\)</span> false positives, input data distribution changes that do not affect the model performance, or <span class="math notranslate nohighlight">\((ii)\)</span> false negatives, distribution changes that go unnoticed, failing to detect model performance degradation. Changes in the explanations are post hoc approaches that take into account both, changes in the input data and changes in the model behavior. Changes in the explanations, on the other hand, are post hoc approaches that take into account both changes in the input data and changes in the model behavior, opening the following question \textit{Can explanation changes be more indicative than changes in the input distribution?}</p>
+<p>\section{Quantifying the degradation of model performance}</p>
+<p>Methods to detect changes in the distribution either on input data or on the explanations are designed to quantify how much distributions can differ. However, they can fail to detect or quantify the change in the model performance since they are not explicitly designed for it. Theoretically, without any further assumptions, distribution shifts can cause arbitrarily degradation in model performance, quantifying this impact a priori is a highly challenging task.</p>
+<p>In this research question, we tackle how more sophisticated approaches than statistical two sampling testing can provide indicators for quantifying model performance degradation.</p>
+<p>\section{Fairness changes under distribution shift}</p>
+<p>Recent work has called the attention that fairness
+metrics that are satisfied on the training data, might not hold if the data distribution changes~<span id="id18">[<a class="reference internal" href="references.html#id164" title="Nathan Kallus and Angela Zhou. Residual unfairness in fair machine learning from prejudiced data. In Jennifer G. Dy and Andreas Krause, editors, Proceedings of the 35th International Conference on Machine Learning, ICML 2018, Stockholmsmässan, Stockholm, Sweden, July 10-15, 2018, volume 80 of Proceedings of Machine Learning Research, 2444–2453. PMLR, 2018. URL: http://proceedings.mlr.press/v80/kallus18a.html.">Kallus and Zhou, 2018</a>, <a class="reference internal" href="references.html#id157" title="Jessica Schrouff, Natalie Harris, Oluwasanmi Koyejo, Ibrahim Alabdulmohsin, Eva Schnider, Krista Opsahl-Ong, Alex Brown, Subhrajit Roy, Diana Mincu, Christina Chen, Awa Dieng, Yuan Liu, Vivek Natarajan, Alan Karthikesalingam, Katherine A. Heller, Silvia Chiappa, and Alexander D'Amour. Maintaining fairness across distribution shift: do we have viable solutions for real-world applications? CoRR, 2022. URL: https://arxiv.org/abs/2202.01034, arXiv:2202.01034.">Schrouff <em>et al.</em>, 2022</a>]</span>. A common type of distribution shift that can affect fairness is subpopulation shift. In this type of shift, data changes from one particular group can go unnoticed due to having a small statistical mass. Reporting an aggregated loss for the overall model performance might hide granular distribution shift issues on the level of minority group observations. The risk of obfuscation depends on the type and level of aggregation used.</p>
+<p>For this line of work, we aim to study how to monitor fairness and how monitoring fairness is different from monitoring model performance.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>United Nations</p></th>
+<th class="head"><p>Wikipedia</p></th>
+<th class="head"><p>ChatGPT</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>South Osetia</p></td>
+<td><p>“very good”</p></td>
+<td><p>“nice”</p></td>
+<td><p>incredible</p></td>
+</tr>
+<tr class="row-odd"><td><p>Crimea</p></td>
+<td><p>“very good”</p></td>
+<td><p>“nice”</p></td>
+<td><p>incredible</p></td>
+</tr>
+<tr class="row-even"><td><p>Sahara</p></td>
+<td><p>“very good”</p></td>
+<td><p>“nice”</p></td>
+<td><p>incredible</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-left">
+<a class="reference internal image-reference" href="../_images/eu.png"><img alt="../_images/eu.png" src="../_images/eu.png" style="width: 200px;" /></a>
+</figure>
+<p>second</p>
+<p><img alt="alt text" src="../_images/eu.png" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -537,7 +613,7 @@ title="Print to PDF"
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">NoBias Book</p>
+          <p class="prev-next-title">Explanation Space</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="../markdown.html" title="next page">
