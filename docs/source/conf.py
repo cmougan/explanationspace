@@ -4,7 +4,7 @@
 
 import sphinx_rtd_theme
 
-project = "NoBias"
+project = "ExplanationSpace"
 copyright = "2022, Mougan"
 author = "Carlos Mougan"
 
