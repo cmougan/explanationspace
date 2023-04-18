@@ -1,4 +1,4 @@
-Fairness Audits: Demographic Parity Inspector
+Fairness Audits: Equal Treatment
 ----------------------------------------------
 
 .. automodule:: explanationspace.audits
