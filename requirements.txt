@@ -1,0 +1,5 @@
+folktables==0.0.12
+pandas
+scikit-learn
+shap
+black

@@ -24,7 +24,7 @@ Importing libraries
 
    from sklearn.model_selection import train_test_split
    from sklearn.datasets import make_blobs
-   from nobias import ExplanationAudit
+   from explanationspace import ExplanationAudit
    from xgboost import XGBClassifier
    from sklearn.linear_model import LogisticRegression
    from sklearn.metrics import roc_auc_score

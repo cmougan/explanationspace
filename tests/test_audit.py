@@ -35,7 +35,6 @@ a_hold_ = np.random.randint(0, 2, size=X_hold.shape[0])
 
 
 def test_explanation_audit():
-
     # Option 1: fit the detector when there is a trained model
     model = XGBClassifier().fit(X_tr, y_tr)
 
@@ -52,7 +51,6 @@ def test_explanation_audit():
 
 
 def test_explanation_audit_random():
-
     # Option 1: fit the detector when there is a trained model
     model = XGBClassifier().fit(X_tr, y_tr)
 
@@ -93,7 +91,6 @@ def test_fit_full_pipe():
 
 
 def test_masker():
-
     detector = ExplanationAudit(
         model=LogisticRegression(),
         gmodel=LogisticRegression(),
@@ -111,7 +108,6 @@ def test_masker():
 
 
 def test_mask_tree_explainer():
-
     detector = ExplanationAudit(
         model=XGBClassifier(),
         gmodel=LogisticRegression(),

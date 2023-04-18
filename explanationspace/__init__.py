@@ -1,3 +1,1 @@
-from nobias.explanation import ShapEstimator
-from nobias.audits import ExplanationAudit
-from nobias.distributionshift import ExplanationShiftDetector
+from explanationspace.audits import ExplanationAudit

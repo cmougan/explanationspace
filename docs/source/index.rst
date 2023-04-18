@@ -1,24 +1,24 @@
-.. image:: https://img.shields.io/pypi/v/nobias.svg
-        :target: https://pypi.python.org/pypi/nobias
+.. image:: https://img.shields.io/pypi/v/explanationspace.svg
+        :target: https://pypi.python.org/pypi/explanationspace
 
 .. image:: https://github.com/david26694/sktools/workflows/Unit%20Tests/badge.svg
         :target: https://github.com/david26694/sktools/actions
 
-.. image:: https://readthedocs.org/projects/nobias/badge/?version=latest
-        :target: https://nobias.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/explanationspace/badge/?version=latest
+        :target: https://explanationspace.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/Workshop-NIPS-blue
         :target: https://img.shields.io/badge/Workshop-NIPS-blue
 
-.. image:: https://static.pepy.tech/personalized-badge/nobias?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads
-        :target: https://pepy.tech/project/nobias
+.. image:: https://static.pepy.tech/personalized-badge/explanationspace?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads
+        :target: https://pepy.tech/project/explanationspace
 
 
-Welcome to NoBias's documentation!
+Welcome to Explanation Space documentation!
 ===================================
 
-NoBias is a Python library for responsible AI
+Explanation Space is a Python library for responsible AI implementing a PhD Thesis
 
 .. note::
 
@@ -27,11 +27,11 @@ NoBias is a Python library for responsible AI
 Installation
 ------------
 
-To install nobias, run this command in your terminal:
+To install explanationspace, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install nobias
+    $ pip install explanationspace
 
 
 Usage: Equal Treatment Inspector
@@ -47,7 +47,7 @@ Importing libraries
 
    from sklearn.model_selection import train_test_split
    from sklearn.datasets import make_blobs
-   from nobias import ExplanationAudit
+   from explanationspace import ExplanationAudit
    from xgboost import XGBClassifier
    from sklearn.linear_model import LogisticRegression
    from sklearn.metrics import roc_auc_score
@@ -119,8 +119,8 @@ Features
 
 Here's a list of features that sktools currently offers:
 
-* ``nobias.audits.ExplanationAudit`` performs equal treatment audits.
-* ``nobias.distributionshift.ExplanationShiftDetector`` Detector for explanation shift.
+* ``explanationspace.audits.ExplanationAudit`` performs equal treatment audits.
+* ``explanationspace.distributionshift.ExplanationShiftDetector`` Detector for explanation shift.
 
 Tutorial
 --------

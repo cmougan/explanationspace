@@ -1,7 +1,7 @@
 Fairness Audits: Demographic Parity Inspector
 ----------------------------------------------
 
-.. automodule:: nobias.audits
+.. automodule:: explanationspace.audits
     :members:
     :undoc-members:
     :show-inheritance:
