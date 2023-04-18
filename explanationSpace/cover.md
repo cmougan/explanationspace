@@ -31,14 +31,14 @@ You can cite the book like this:
 
 Or use the following bibtex entry:
 ```
-book{nobias,
-   title      = {NoBias Book},
-   author     = {},
-   year       = {2022},
-   subtitle   = {A review of the AI pipeline through the lenses of bias},
-   edition    = {1},
-   url        = {https://github.com/nobias-project/nobias-project.github.io}
-   }
+@phdthesis{MouganExplanationSpace2023,
+author = {Mougan, Carlos}, advisor = {},
+title = {},
+year = {2023},
+note = {},
+publisher = {},
+address = {},
+}
 ```
 
 <br />
