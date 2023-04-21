@@ -1,9 +1,6 @@
 .. image:: https://img.shields.io/pypi/v/explanationspace.svg
         :target: https://pypi.python.org/pypi/explanationspace
 
-.. image:: https://github.com/david26694/sktools/workflows/Unit%20Tests/badge.svg
-        :target: https://github.com/david26694/sktools/actions
-
 .. image:: https://readthedocs.org/projects/explanationspace/badge/?version=latest
         :target: https://explanationspace.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
@@ -16,9 +13,14 @@
 
 
 Welcome to Explanation Space documentation!
-===================================
+===========================================================
 
-Explanation Space is a Python library for responsible AI implementing a PhD Thesis
+Explanation Space is an open-source Python library for responsible AI that aims to provide an interpretable equal treatment quantification method based on the explanation space.
+This method focuses on the notion of equality of treatment and provides theoretical guarantees along with experiments with synthetic and real data use cases.
+
+Our approach sheds insights into the root causes of unfairness,
+contributing to the auditing of fair ML models that treat individuals equally regardless of their protected characteristics.
+To make it more accessible, we provide the open-source Python package with methods, routines, and tutorials.
 
 .. note::
 
@@ -36,6 +38,8 @@ To install explanationspace, run this command in your terminal:
 
 Usage: Equal Treatment Inspector
 -------------------------------------
+With the explanationspace package, you can use the Equal Treatment Inspector method to assess whether a model is treating individuals equally based on their protected characteristics.
+
 
 
 Synthetic example
@@ -126,7 +130,6 @@ Tutorial
 --------
 .. toctree::
    :maxdepth: 2
-   :caption: Tutorial:
 
    installation
    auditTutorial
@@ -135,7 +138,6 @@ Documentation
 ----------------
 .. toctree::
    :maxdepth: 2
-   :caption: Documentation:
 
    audits
    api
@@ -146,3 +148,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+   :caption: API
+
+   api

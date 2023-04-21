@@ -1,7 +1,14 @@
-API
-===
+#########
+Explanation Space API
+#########
+
+.. currentmodule:: explanationspace
+
+Explanation Audits Module
+========================================
 
 .. autosummary::
-   :toctree: generated
+   :toctree: generated/
+   :template: class.rst
 
-
+   explanationspace.ExplanationAudit
