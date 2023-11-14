@@ -156,6 +156,7 @@ Documentation
 .. toctree::
    :maxdepth: 2
 
+   motivation
    audits
    api
 

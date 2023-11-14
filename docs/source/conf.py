@@ -3,13 +3,16 @@
 # -- Project information
 
 import sphinx_rtd_theme
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../..'))
 
 project = "ExplanationSpace"
 copyright = "2023, Mougan"
 author = "Carlos Mougan"
 
-release = "0.1"
-version = "0.1.0"
+release = "0.2"
+version = "0.2"
 
 # -- General configuration
 
