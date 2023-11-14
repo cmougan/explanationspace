@@ -4,3 +4,4 @@ scikit-learn
 shap
 black
 explanationspace
+sphinx_rtd_theme
