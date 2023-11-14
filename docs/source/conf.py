@@ -5,7 +5,7 @@
 import sphinx_rtd_theme
 
 project = "ExplanationSpace"
-copyright = "2022, Mougan"
+copyright = "2023, Mougan"
 author = "Carlos Mougan"
 
 release = "0.1"

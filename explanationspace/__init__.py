@@ -1,1 +1,1 @@
-from explanationspace.audits import ExplanationAudit
+from explanationspace.audits import EqualTreatment

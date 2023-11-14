@@ -5,7 +5,7 @@ import pandas as pd
 import shap
 
 
-class ExplanationAudit(BaseEstimator, ClassifierMixin):
+class EqualTreatment(BaseEstimator, ClassifierMixin):
     """
     Given a model, a dataset, and the protected attribute, we want to know if the model violates demographic parity or not and what are the features pushing for it.
     We do this by computing the shap values of the model, and then train a classifier to distinguish the protected attribute.
@@ -16,7 +16,7 @@ class ExplanationAudit(BaseEstimator, ClassifierMixin):
     >>> import numpy as np
     >>> from sklearn.linear_model import LogisticRegression
     >>> from xgboost import XGBRegressor
-    >>> from fairtools.detector import ExplanationAudit
+    >>> from fairtools.detector import EqualTreatment
     >>> N = 5_000
     >>> x1 = np.random.normal(1, 1, size=N)
     >>> x2 = np.random.normal(1, 1, size=N)
@@ -29,7 +29,7 @@ class ExplanationAudit(BaseEstimator, ClassifierMixin):
     >>> X.columns = ["var%d" % (i + 1) for i in range(X.shape[1])]
     >>> y = (x1 + x2 + x3) / 3
     >>> y = 1 / (1 + np.exp(-y))
-    >>> detector = ExplanationAudit(model=XGBRegressor(), gmodel=LogisticRegression())
+    >>> detector = EqualTreatment(model=XGBRegressor(), gmodel=LogisticRegression())
     >>> detector.fit(X, y, Z="var4")
     >>> detector.get_auc_val()
     """

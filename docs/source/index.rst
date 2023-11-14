@@ -35,6 +35,23 @@ To install explanationspace, run this command in your terminal:
 
     $ pip install explanationspace
 
+The tutorial relies on the following packages:
+
+* `numpy <https://numpy.org/>`_
+* `pandas <https://pandas.pydata.org/>`_
+* `scikit-learn <https://scikit-learn.org/stable/>`_
+* `xgboost <https://xgboost.readthedocs.io/en/latest/>`_
+* `matplotlib <https://matplotlib.org/>`_
+* `shap <httpes://shap.readthedocs.io/en/latest/>`_
+* `scipy <https://www.scipy.org/>`_
+
+The packages can be installed via:
+
+.. code-block:: console
+
+    $ pip install numpy pandas scikit-learn xgboost matplotlib shap scipy
+
+
 
 Usage: Equal Treatment Inspector
 -------------------------------------
@@ -51,7 +68,7 @@ Importing libraries
 
    from sklearn.model_selection import train_test_split
    from sklearn.datasets import make_blobs
-   from explanationspace import ExplanationAudit
+   from explanationspace import EqualTreatment
    from xgboost import XGBClassifier
    from sklearn.linear_model import LogisticRegression
    from sklearn.metrics import roc_auc_score
@@ -96,7 +113,7 @@ Fit ET Inspector where the classifier is a Gradient Boosting Decision Tree and t
    # Option 1: fit the auditor when there is a trained model
    model = XGBClassifier().fit(X_tr, y_tr)
 
-   auditor = ExplanationAudit(model=model, gmodel=LogisticRegression())
+   auditor = EqualTreatment(model=model, gmodel=LogisticRegression())
 
    auditor.fit_inspector(X_hold, z_hold)
    print(roc_auc_score(z_te, auditor.predict_proba(X_te)[:, 1]))
@@ -123,7 +140,7 @@ Features
 
 Here's a list of features that sktools currently offers:
 
-* ``explanationspace.audits.ExplanationAudit`` performs equal treatment audits.
+* ``explanationspace.audits.EqualTreatment`` performs equal treatment audits.
 * ``explanationspace.distributionshift.ExplanationShiftDetector`` Detector for explanation shift.
 
 Tutorial

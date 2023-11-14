@@ -1,6 +1,6 @@
-﻿explanationspace.ExplanationAudit
+﻿explanationspace.EqualTreatment
 =================================
 
 .. currentmodule:: explanationspace
 
-.. autoclass:: ExplanationAudit
+.. autoclass:: EqualTreatment

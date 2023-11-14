@@ -12,9 +12,9 @@ To install sktools, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install nobias
+    $ pip install explanationspace
 
-This is the preferred method to install nobias, as it will always install the most recent stable release.
+This is the preferred method to install explanationspace, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -32,7 +32,7 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone https://github.com/nobias-project/nobias.git
+    $ git clone https://github.com/cmougan/explanationspace.git
 
 Once you have a copy of the source, you can install it with:
 
@@ -41,4 +41,4 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/nobias-project/nobias.git
+.. _Github repo: https://github.com/cmougan/explanationspace.git

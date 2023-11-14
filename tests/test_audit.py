@@ -1,4 +1,4 @@
-from nobias import ExplanationAudit
+from explanationspace import EqualTreatment
 
 from xgboost import XGBClassifier, XGBRegressor
 from sklearn.linear_model import LogisticRegression, LinearRegression
@@ -7,7 +7,6 @@ from sklearn.metrics import roc_auc_score
 from sklearn.datasets import make_blobs
 import pandas as pd
 import numpy as np
-from nobias import ExplanationAudit
 import random
 
 random.seed(0)
@@ -38,7 +37,7 @@ def test_explanation_audit():
     # Option 1: fit the detector when there is a trained model
     model = XGBClassifier().fit(X_tr, y_tr)
 
-    detector = ExplanationAudit(model=model, gmodel=LogisticRegression())
+    detector = EqualTreatment(model=model, gmodel=LogisticRegression())
 
     detector.fit_inspector(X_te, a_te)
     # pdb.set_trace()
@@ -54,7 +53,7 @@ def test_explanation_audit_random():
     # Option 1: fit the detector when there is a trained model
     model = XGBClassifier().fit(X_tr, y_tr)
 
-    detector = ExplanationAudit(model=model, gmodel=LogisticRegression())
+    detector = EqualTreatment(model=model, gmodel=LogisticRegression())
     # On Random Data
     detector.fit_inspector(X_te, a_te_)
     # pdb.set_trace()
@@ -68,7 +67,7 @@ def test_explanation_audit_random():
 
 def test_fit_full_pipe():
     # Full pipe
-    detector = ExplanationAudit(
+    detector = EqualTreatment(
         model=XGBClassifier(),
         gmodel=LogisticRegression(),
     )
@@ -77,7 +76,7 @@ def test_fit_full_pipe():
 
     # Partial Pipe
     m = XGBClassifier().fit(X_tr, y_tr)
-    detector2 = ExplanationAudit(
+    detector2 = EqualTreatment(
         model=m,
         gmodel=LogisticRegression(),
     )
@@ -91,7 +90,7 @@ def test_fit_full_pipe():
 
 
 def test_masker():
-    detector = ExplanationAudit(
+    detector = EqualTreatment(
         model=LogisticRegression(),
         gmodel=LogisticRegression(),
         masker=True,
@@ -108,7 +107,7 @@ def test_masker():
 
 
 def test_mask_tree_explainer():
-    detector = ExplanationAudit(
+    detector = EqualTreatment(
         model=XGBClassifier(),
         gmodel=LogisticRegression(),
         masker=True,

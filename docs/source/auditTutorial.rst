@@ -24,7 +24,7 @@ Importing libraries
 
    from sklearn.model_selection import train_test_split
    from sklearn.datasets import make_blobs
-   from explanationspace import ExplanationAudit
+   from explanationspace import EqualTreatment
    from xgboost import XGBClassifier
    from sklearn.linear_model import LogisticRegression
    from sklearn.metrics import roc_auc_score
@@ -69,7 +69,7 @@ Fit ET Inspector where the classifier is a Gradient Boosting Decision Tree and t
    # Option 1: fit the auditor when there is a trained model
    model = XGBClassifier().fit(X_tr, y_tr)
 
-   auditor = ExplanationAudit(model=model, gmodel=LogisticRegression())
+   auditor = EqualTreatment(model=model, gmodel=LogisticRegression())
 
    auditor.fit_inspector(X_hold, z_hold)
    print(roc_auc_score(z_te, auditor.predict_proba(X_te)[:, 1]))
@@ -135,7 +135,7 @@ The model is trained on CA data, where we measure un-equal treatment between two
 
 .. code:: python
 
-   auditor = ExplanationAudit(model=model, gmodel=XGBClassifier())
+   auditor = EqualTreatment(model=model, gmodel=XGBClassifier())
 
    auditor.fit_inspector(X_te, z_te)
    print(roc_auc_score(z_hold, auditor.predict_proba(X_hold)[:, 1]))
@@ -194,7 +194,7 @@ Now we can proceed to do the same with another pair of groups
    X_hold = X_hold.drop("group", axis=1)
 
    model = XGBClassifier().fit(X_tr, y_tr)
-   auditor = ExplanationAudit(model=model, gmodel=XGBClassifier())
+   auditor = EqualTreatment(model=model, gmodel=XGBClassifier())
 
    auditor.fit_inspector(X_te, z_te)
    print(roc_auc_score(z_hold, auditor.predict_proba(X_hold)[:, 1]))

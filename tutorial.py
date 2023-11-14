@@ -1,7 +1,7 @@
 # %%
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_blobs
-from explanationspace import ExplanationAudit
+from explanationspace import EqualTreatment
 from xgboost import XGBClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
@@ -38,7 +38,7 @@ z_hold_ = np.random.randint(0, 2, size=X_hold.shape[0])
 # Option 1: fit the auditor when there is a trained model
 model = XGBClassifier().fit(X_tr, y_tr)
 
-auditor = ExplanationAudit(model=model, gmodel=LogisticRegression())
+auditor = EqualTreatment(model=model, gmodel=LogisticRegression())
 
 auditor.fit_inspector(X_hold, z_hold)
 print(roc_auc_score(z_te, auditor.predict_proba(X_te)[:, 1]))
@@ -93,7 +93,7 @@ X_hold = X_hold.drop("group", axis=1)
 model = XGBClassifier().fit(X_tr, y_tr)
 
 # %%
-auditor = ExplanationAudit(model=model, gmodel=XGBClassifier())
+auditor = EqualTreatment(model=model, gmodel=XGBClassifier())
 
 auditor.fit_inspector(X_te, z_te)
 print(roc_auc_score(z_hold, auditor.predict_proba(X_hold)[:, 1]))
@@ -136,7 +136,7 @@ X_hold = X_hold.drop("group", axis=1)
 model = XGBClassifier().fit(X_tr, y_tr)
 
 # %%
-auditor = ExplanationAudit(model=model, gmodel=XGBClassifier())
+auditor = EqualTreatment(model=model, gmodel=XGBClassifier())
 
 auditor.fit_inspector(X_te, z_te)
 print(roc_auc_score(z_hold, auditor.predict_proba(X_hold)[:, 1]))

@@ -11,4 +11,4 @@ Explanation Audits Module
    :toctree: generated/
    :template: class.rst
 
-   explanationspace.ExplanationAudit
+   explanationspace.EqualTreatment
