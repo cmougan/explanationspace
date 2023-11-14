@@ -16,7 +16,7 @@ class EqualTreatment(BaseEstimator, ClassifierMixin):
     >>> import numpy as np
     >>> from sklearn.linear_model import LogisticRegression
     >>> from xgboost import XGBRegressor
-    >>> from fairtools.detector import EqualTreatment
+    >>> from explanationspace import EqualTreatment
     >>> N = 5_000
     >>> x1 = np.random.normal(1, 1, size=N)
     >>> x2 = np.random.normal(1, 1, size=N)
