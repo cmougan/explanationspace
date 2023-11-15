@@ -43,6 +43,7 @@ Importing libraries
    from sklearn.metrics import roc_auc_score
    import pandas as pd
    import numpy as np
+   import shap
    import random
    import matplotlib.pyplot as plt
    random.seed(0)
@@ -111,7 +112,7 @@ Folktables: US Income Dataset
 In this case we use the US Income dataset. 
 The dataset is available in the `Folktables <https://github.com/socialfoundations/folktables>`_ repository.
 
-We generate a geopolitical shift by training on California data and evaluating on other states.
+
 
 .. code:: python
 
@@ -166,9 +167,9 @@ The AUC is high which means that there is unequal treatment.
    shap.waterfall_plot(shap_values[0], show=False)
 
    # Global Explanations
-   hap.plots.bar(shap_values, show=False)
+   shap.plots.bar(shap_values, show=False)
 
- We proceed to the explanations of the *Explanation Shift Detector*
+ We proceed to the explanations of the *Equal Treatment Inspector*
 
 .. image:: images/folksShapLocal.png
   :width: 400
