@@ -15,6 +15,19 @@ The first one the un-equal treatment is generated synthetically and in the secon
 
    This project is under active development.
 
+
+This tutorial requires an additional package besides the one
+
+.. code-block:: console
+
+    $ pip install folktables==0.0.12
+
+Or alternative to install packages
+.. code-block:: console
+
+    $ pip install numpy pandas scikit-learn xgboost matplotlib shap scipy explanationspace folktables==0.0.12
+
+
 Synthetic example
 --------------------------
 
