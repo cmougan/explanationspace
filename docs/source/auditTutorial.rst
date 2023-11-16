@@ -16,17 +16,6 @@ The first one the un-equal treatment is generated synthetically and in the secon
    This project is under active development.
 
 
-This tutorial requires an additional package besides the one
-
-.. code-block:: console
-
-    $ pip install folktables==0.0.12
-
-Or alternative to install packages
-.. code-block:: console
-
-    $ pip install numpy pandas scikit-learn xgboost matplotlib shap scipy explanationspace folktables==0.0.12
-
 
 Synthetic example
 --------------------------
@@ -34,10 +23,9 @@ Synthetic example
 Importing libraries
 
 .. code:: python
-
+   from explanationspace import EqualTreatment
    from sklearn.model_selection import train_test_split
    from sklearn.datasets import make_blobs
-   from explanationspace import EqualTreatment
    from xgboost import XGBClassifier
    from sklearn.linear_model import LogisticRegression
    from sklearn.metrics import roc_auc_score
@@ -111,14 +99,32 @@ Folktables: US Income Dataset
 
 In this case we use the US Income dataset. 
 The dataset is available in the `Folktables <https://github.com/socialfoundations/folktables>`_ repository.
+Which can be installed via:
+
+.. code-block:: console
+
+    $ pip install folktables==0.0.12
+
+Or alternative to install packages
+.. code-block:: console
+
+    $ pip install numpy pandas scikit-learn xgboost matplotlib shap scipy explanationspace folktables==0.0.12
 
 
 
 .. code:: python
 
-   # Real World Example - Folktables
+   from explanationspace import EqualTreatment
    from folktables import ACSDataSource, ACSIncome
    import pandas as pd
+   from sklearn.model_selection import train_test_split
+   from sklearn.linear_model import LogisticRegression
+   from sklearn.metrics import roc_auc_score
+   from xgboost import XGBClassifier
+   import pandas as pd
+   import numpy as np
+   import random
+   random.seed(0)
 
    data_source = ACSDataSource(survey_year="2018", horizon="1-Year", survey="person")
    ca_data = data_source.get_data(states=["CA"], download=True)
@@ -159,8 +165,8 @@ The AUC is high which means that there is unequal treatment.
  We can now proceed to inspect the reason behind this un-equal treatment
 
 .. code:: python
-
-   explainer = shap.Explainer(auditor.inspector)
+   
+   explainer = shap.Explainer(auditor.inspector, X_hold)
 
    shap_values = explainer(auditor.get_explanations(X_hold))
    # Local Explanations
@@ -169,7 +175,8 @@ The AUC is high which means that there is unequal treatment.
    # Global Explanations
    shap.plots.bar(shap_values, show=False)
 
- We proceed to the explanations of the *Equal Treatment Inspector*
+
+We proceed to the explanations of the *Equal Treatment Inspector*
 
 .. image:: images/folksShapLocal.png
   :width: 400
